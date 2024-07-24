@@ -1,0 +1,602 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #E5E5E5;
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  height: 100vh;
+  
+}
+
+body {
+  font-size: 1.2rem;
+  height: 100vh;
+  
+}
+
+.grid-container > * {
+  text-align: center;
+  
+  
+}
+.grid-container {
+
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header"  10vh
+    "main"    50vh
+    "sidebar" 30vh
+    "footer"  10vh;
+}
+
+
+/* -----HEADER---------------------------- */
+.header {
+  grid-area: header;
+  display: flex;
+  margin-top: 20px;
+  & h1{
+    font-size: 1em;
+    color: #0A3871;
+    text-align: center;
+    font-weight: bold;
+  }
+  & h1:hover{
+    font-size: 110%;
+    text-shadow: 3px 3px #94bbe3;
+    transition: 555ms;
+    
+  }
+  .logo{
+    width: 10%;
+    height: 10%;
+    
+  }
+}
+
+/* -----MAIN: ENCRIPTAR--------------------------- */
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  
+}
+.text-area{
+  border: none;
+  color: #0A3871;
+  margin-top: 20px;
+  text-transform: lowercase;
+  width: 80vw;/*tenia 80vh*/
+  height: 80%;
+  margin-left: 20px;
+}
+.text-area::placeholder{
+  color: #0A3871;
+}
+.text-area:focus{
+  outline: none;
+}
+.alerta{
+  margin-left: 20px;
+  display: flex;
+  gap: 1em;
+}
+.informacion{
+  color: #495057;
+  font-size: 0.7em;
+}
+.informacion:hover{
+  color: red;
+ transition: 555ms;
+}
+.botones{
+  gap: 24px;
+  width: 100vw;
+  margin-bottom: 10px;
+  
+}
+.btn-desencriptar{
+  background: #d8dfe8;
+  border: 1px solid #0A3871;
+  border-radius: 24px;
+  color: #0A3871;
+  cursor: pointer;
+  height: 50px;
+  width: 300px;
+  margin-left: 20px;
+  margin-top: 10px;
+  
+}
+.btn-encriptar{
+  background: #0A3871;
+  border: 1px solid #0A3871;
+  border-radius: 24px;
+  color: white;
+  cursor: pointer;
+  height: 50px;
+  width: 300px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.btn-encriptar:hover{
+  font-size: 105%;
+  font-weight: bold;
+  transition: 555ms;
+}
+.btn-desencriptar:hover{
+  font-size: 105%;
+  font-weight: bold;
+  transition: 555ms;
+}
+
+
+/* -----SIDEBAR: ENCRIPTADO------------------------ */
+.sidebar {
+  grid-area: sidebar;
+  background-color: white;
+  border-radius: 32px;
+  margin-right: 40px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.08);
+  width: 100vw;
+}
+.mensaje{
+  background: white;
+  background-image: url(img/Muñeco.png);
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 24px;
+  color: #0A3871;
+  padding-left: 10px;
+}
+.mensaje:focus{
+  outline: none;
+}
+.texto2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  color: #495057;
+  text-align: center;
+  
+  & h2{
+    background: white;
+    font-size: 24px;
+    
+  }
+  & p{
+    background: white;
+    font-size: 16px;
+  }
+}
+.btn-copiar{
+  background: #d8dfe8;
+  border: 1px solid #0A3871;
+  border-radius: 24px;
+  color: #0A3871;
+  cursor: pointer;
+  position: absolute;
+  display: none;
+  margin-left: 55px;
+  margin-top: 150px;
+  height: 50px;
+  width: 300px;
+}
+.btn-copiar:hover{
+  font-size: 115%;
+  font-weight: bold;
+  transition: 555ms;
+}
+
+/* -----FOOTER--------------------------- */
+.footer {
+  grid-area: footer;
+  width: 100vw;
+}
+.footer h6{
+  font-size: 0.5em;
+  color: #495057;
+ 
+}
+.footer h1{
+  background: #E5E5E5;
+  color:#0a3871;
+  font-weight: bold; 
+  font-size: 1em; 
+}
+.footer h1:hover{
+  font-size: 110%;
+  background: #0A3871;
+  color: white;
+  border-radius: 24px;
+  transition: 800ms;
+
+}
+
+
+/* DISEÑO RESPONSIVE: TABLET */
+@media (min-width: 600px)and(max-width: 991px) {
+  .grid-container {
+    grid-template:
+    "header"  10vh
+    "main"    40vh
+    "sidebar" 30vh
+    "footer"  10vh;
+  }
+   
+  .header { /* -----HEADER---------------------------- */
+    grid-area: header;
+      display: flex;
+      & h1{
+      font-size: 1em;
+      color: #0A3871;
+      text-align: center;
+      font-weight: bold;
+    }
+    & h1:hover{
+      font-size: 110%;
+      text-shadow: 3px 3px #94bbe3;
+    
+     }
+    .logo{
+      width: 10%;
+      height: 10%;
+  }
+  }
+
+  /* -----MAIN: ENCRIPTAR--------------------------- */
+  .main {
+    grid-area: main;
+  }
+  .text-area{
+    border: none;
+    color: #0A3871;
+    margin-top: 20px;
+    text-transform: lowercase;
+    width: 80vh;
+    height: 60%;
+  
+  }
+  .text-area::placeholder{
+    color: #0A3871;
+  }
+  .text-area:focus{
+    outline: none;
+  }
+  .alerta{
+    display: flex;
+    gap: 1em;
+  }
+  .informacion:hover{
+    color: red;
+  }
+  .botones{
+    display: flex;
+    background-color: #030f1c;
+    flex-direction: row;
+    
+  }
+  .btn-desencriptar{
+    background: #d8dfe8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    cursor: pointer;
+    height: 67px;
+    width: 328px;
+  }
+  .btn-encriptar{
+    background: #0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: white;
+    cursor: pointer;
+    height: 67px;
+    width: 328px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .btn-encriptar:hover{
+    font-size: 115%;
+    font-weight: bold;
+  }
+  .btn-desencriptar:hover{
+    font-size: 115%;
+    font-weight: bold;
+  }
+  .informacion{
+    color: #495057;
+    font-size: 0.7em;
+  }
+
+
+
+  /* -----SIDEBAR: ENCRIPTADO------------------------ */
+  .sidebar {
+    grid-area: sidebar;
+  }
+  .mensaje{
+    background: white;
+    background-image: url(img/Muñeco.png);
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 24px;
+    color: #0A3871;
+    
+  }
+  .mensaje:focus{
+    outline: none;
+  }
+  .texto2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    color: #495057;
+    text-align: center;
+    
+    & h2{
+      background: white;
+      font-size: 24px;
+      
+    }
+    & p{
+      background: white;
+      font-size: 16px;
+    }
+  }
+  .btn-copiar{
+    background: #d8dfe8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    cursor: pointer;
+    height: 67px;
+    position: absolute;
+    width: 328px;
+    /* display: none; */
+  }
+  .btn-copiar:hover{
+    font-size: 115%;
+    font-weight: bold;
+  }
+
+  /* -----FOOTER--------------------------- */
+  .footer {
+    grid-area: footer;
+
+  }
+  .footer h6{
+    font-size: 0.5em;
+    color: #495057;
+  
+  }
+  .footer h1{
+    background: #E5E5E5;
+    color:#0a3871;
+    font-weight: bold; 
+    font-size: 1em; 
+  }
+  .footer h1:hover{
+    font-size: 110%;
+    background: #0A3871;
+    color: white;
+    border-radius: 24px;
+
+  }
+
+
+}
+
+
+
+/* DISEÑO RESPONSIVE: DESKTOP */
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template:
+      "header header"  10vh
+      "main   sidebar" 70vh
+      "footer footer"  10vh/
+      70vw      30vw;
+  }
+  .header{
+    display: flex;
+
+  }
+  
+   
+  .header { /* -----HEADER---------------------------- */
+    grid-area: header;
+      display: flex;
+      & h1{
+      font-size: 1em;
+      color: #0A3871;
+      text-align: center;
+      font-weight: bold;
+    }
+    & h1:hover{
+      font-size: 110%;
+      text-shadow: 3px 3px #94bbe3;
+    
+     }
+    .logo{
+      width: 10%;
+      height: 10%;
+  }
+  }
+
+  /* -----MAIN: ENCRIPTAR--------------------------- */
+  .main {
+    grid-area: main;
+  }
+  .text-area{
+    border: none;
+    color: #0A3871;
+    margin-top: 20px;
+    margin-left: 120px;
+    text-transform: lowercase;
+    width: 80vh;
+    height:70%;
+  
+  }
+  .text-area::placeholder{
+    color: #0A3871;
+  }
+  .text-area:focus{
+    outline: none;
+  }
+  .alerta{
+    display: flex;
+    gap: 1em;
+    margin-left: 100px;
+  }
+  .informacion:hover{
+    color: red;
+  }
+  .botones{
+    display: flex;
+    flex-direction: row;
+    justify-items: baseline;
+    gap: 24px;
+    width: 100%;
+    height:auto;
+    margin-left: 100px;
+    
+  }
+  
+  .btn-encriptar{
+    background: #0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: white;
+    cursor: pointer;
+    height: 67px;
+    width: 328px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .btn-encriptar:hover{
+    font-size: 115%;
+    font-weight: bold;
+  }
+  .btn-desencriptar{
+    background: #d8dfe8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    cursor: pointer;
+    height: 67px;
+    margin-left: 10px;
+    width: 328px;
+    margin-top: 10px;
+  }
+  .btn-desencriptar:hover{
+    font-size: 115%;
+    font-weight: bold;
+  }
+  .informacion{
+    color: #495057;
+    font-size: 0.7em;
+  }
+
+
+
+  /* -----SIDEBAR: ENCRIPTADO------------------------ */
+  .sidebar {
+    grid-area: sidebar;
+    background: white;
+    padding: 10px;
+    position: relative;
+    margin-top: -40px;
+    margin-bottom: -60px;
+     width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .mensaje{
+    background: white;
+    background-image: url(img/Muñeco.png);
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 24px;
+    color: #0A3871;
+    height: 224px;
+    width: 25vw;
+    height: 300px;
+    
+    
+  }
+  .mensaje:focus{
+    outline: none;
+  }
+  .texto2{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background: white;
+    color: #495057;
+    text-align: center;
+    margin-top: 100px;
+    
+    & h2{
+      background: white;
+      font-size: 24px;
+      
+    }
+    & p{
+      background: white;
+      font-size: 16px;
+    }
+  }
+  .btn-copiar{
+    background: #d8dfe8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    cursor: pointer;
+    height: 67px;
+    position: absolute;
+    width: 328px;
+    display: none;
+    margin-left:10px;
+    margin-top: 0px;
+  }
+  .btn-copiar:hover{
+    font-size: 115%;
+    font-weight: bold;
+  }
+
+  /* -----FOOTER--------------------------- */
+  .footer {
+    grid-area: footer;
+    
+  }
+  .footer h6{
+    font-size: 0.5em;
+    color: #495057;
+  
+  }
+  .footer h1{
+    background: #E5E5E5;
+    color:#0a3871;
+    font-weight: bold; 
+    font-size: 1em; 
+  }
+  .footer h1:hover{
+    font-size: 110%;
+    background: #0A3871;
+    color: white;
+    border-radius: 24px;
+
+  }
+
+
+}
